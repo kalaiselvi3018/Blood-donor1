@@ -1,0 +1,262 @@
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blood Donor Finder</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header>
+      <div class="header-content">
+        <div>
+          <h1>🩸 Blood Donor Finder</h1>
+
+          <p>Find blood donors quickly and save lives ❤️</p>
+        </div>
+
+        <button class="dark-btn" onclick="toggleDarkMode()">🌙</button>
+      </div>
+    </header>
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+      <div class="stat-card">
+        <span>👥</span>
+
+        <h3 id="totalDonors">0</h3>
+
+        <p>Total Donors</p>
+      </div>
+
+      <div class="stat-card">
+        <span>🩸</span>
+
+        <h3 id="totalBloodGroups">0</h3>
+
+        <p>Blood Groups</p>
+      </div>
+
+      <div class="stat-card">
+        <span>🏙️</span>
+
+        <h3 id="totalCities">0</h3>
+
+        <p>Cities</p>
+      </div>
+
+      <div class="stat-card">
+        <span>❤️</span>
+
+        <h3>24/7</h3>
+
+        <p>Emergency Support</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <!-- REGISTER DONOR -->
+
+      <section class="card">
+        <h2>➕ Register as a Donor</h2>
+
+        <input type="text" id="name" placeholder="Enter your name" />
+
+        <input type="number" id="age" placeholder="Enter your age" />
+
+        <select id="bloodGroup">
+          <option value="">Select Blood Group</option>
+
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+
+        <input type="text" id="city" placeholder="Enter your city" />
+
+        <input type="tel" id="phone" placeholder="Enter phone number" />
+
+        <button onclick="addDonor()">🩸 Register Donor</button>
+      </section>
+
+      <!-- SEARCH DONOR -->
+
+      <section class="card">
+        <h2>🔎 Find a Donor</h2>
+
+        <select id="searchBlood">
+          <option value="">Select Blood Group</option>
+
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+
+        <input type="text" id="searchCity" placeholder="Enter city" />
+
+        <div class="button-row">
+          <button onclick="findDonors()">🔎 Search</button>
+
+          <button class="reset-btn" onclick="resetSearch()">🔄 Reset</button>
+        </div>
+
+        <div id="donorList"></div>
+      </section>
+
+      <!-- CSV SECTION -->
+
+      <section class="card csv-card">
+        <h2>📄 Donor CSV File</h2>
+
+        <p>
+          Registered donors are saved in the browser and can be exported as a
+          CSV file.
+        </p>
+
+        <div class="button-row">
+          <button onclick="downloadCSV()">📥 Download Donors CSV</button>
+
+          <button class="delete-all-btn" onclick="deleteAllDonors()">
+            🗑️ Delete All
+          </button>
+        </div>
+      </section>
+
+      <!-- BLOOD GROUP AVAILABILITY -->
+
+      <section class="card">
+        <h2>🩸 Blood Group Availability</h2>
+
+        <div class="blood-grid">
+          <div class="blood-card">
+            <strong>A+</strong>
+
+            <span id="count-A+"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>A-</strong>
+
+            <span id="count-A-"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>B+</strong>
+
+            <span id="count-B+"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>B-</strong>
+
+            <span id="count-B-"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>O+</strong>
+
+            <span id="count-O+"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>O-</strong>
+
+            <span id="count-O-"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>AB+</strong>
+
+            <span id="count-AB+"> 0 Donors </span>
+          </div>
+
+          <div class="blood-card">
+            <strong>AB-</strong>
+
+            <span id="count-AB-"> 0 Donors </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMERGENCY REQUEST -->
+
+      <section class="card emergency">
+        <h2>🚨 Emergency Blood Request</h2>
+
+        <p>Need blood urgently? Submit an emergency request.</p>
+
+        <input type="text" id="patientName" placeholder="Patient name" />
+
+        <select id="emergencyBlood">
+          <option value="">Required Blood Group</option>
+
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+
+        <input type="text" id="hospital" placeholder="Hospital name" />
+
+        <input type="text" id="emergencyCity" placeholder="City" />
+
+        <button onclick="sendEmergencyRequest()">
+          🚨 Send Emergency Request
+        </button>
+      </section>
+
+      <!-- ALL DONORS -->
+
+      <section class="card">
+        <div class="section-title">
+          <h2>👥 Registered Donors</h2>
+
+          <button class="small-btn" onclick="showAllDonors()">View All</button>
+        </div>
+
+        <div id="allDonors"></div>
+      </section>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <p>🩸 Blood Donor Finder</p>
+
+      <p>Every donation can help save a life ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
