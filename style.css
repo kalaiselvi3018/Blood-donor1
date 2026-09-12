@@ -1,0 +1,676 @@
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background: #f5f5f5;
+    color: #222;
+
+    transition: 0.3s;
+}
+
+
+/* HEADER */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #d90429,
+        #ef233c
+    );
+
+    color: white;
+
+    padding: 30px;
+}
+
+
+.header-content {
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+header h1 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+header p {
+    font-size: 16px;
+}
+
+
+/* DARK MODE BUTTON */
+
+.dark-btn {
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    color: #d90429;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: 25px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.stat-card {
+
+    background: white;
+
+    padding: 22px;
+
+    text-align: center;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.1);
+
+    transition: 0.3s;
+}
+
+
+.stat-card:hover {
+
+    transform:
+        translateY(-5px);
+}
+
+
+.stat-card span {
+
+    font-size: 30px;
+}
+
+
+.stat-card h3 {
+
+    color: #d90429;
+
+    font-size: 28px;
+
+    margin: 8px 0;
+}
+
+
+/* CONTAINER */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+/* CARD */
+
+.card {
+
+    background: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0,0,0,0.1);
+}
+
+
+.card h2 {
+
+    color: #d90429;
+
+    margin-bottom: 20px;
+}
+
+
+/* INPUT */
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin: 7px 0;
+
+    border:
+        1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #d90429;
+
+    box-shadow:
+        0 0 5px
+        rgba(217,4,41,0.2);
+}
+
+
+/* BUTTON */
+
+button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    background: #d90429;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+
+    background: #a60320;
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* BUTTON ROW */
+
+.button-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+}
+
+
+.reset-btn {
+
+    background: #555;
+}
+
+
+.reset-btn:hover {
+
+    background: #333;
+}
+
+
+/* DONOR */
+
+.donor {
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-left:
+        5px solid #d90429;
+
+    background: #fafafa;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 6px
+        rgba(0,0,0,0.08);
+}
+
+
+.donor h3 {
+
+    color: #d90429;
+
+    margin-bottom: 10px;
+}
+
+
+.donor p {
+
+    margin: 6px 0;
+}
+
+
+/* DONOR ACTIONS */
+
+.donor-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+}
+
+
+.donor-actions button {
+
+    margin-top: 0;
+
+    padding: 10px;
+}
+
+
+/* CALL */
+
+.call-btn {
+
+    background: #168a45;
+}
+
+
+.call-btn:hover {
+
+    background: #106b35;
+}
+
+
+/* MESSAGE */
+
+.message-btn {
+
+    background: #219ebc;
+}
+
+
+.message-btn:hover {
+
+    background: #126782;
+}
+
+
+/* EDIT */
+
+.edit-btn {
+
+    background: #f77f00;
+}
+
+
+.edit-btn:hover {
+
+    background: #c96300;
+}
+
+
+/* DELETE */
+
+.delete-btn {
+
+    background: #555;
+}
+
+
+.delete-btn:hover {
+
+    background: #333;
+}
+
+
+/* CSV */
+
+.csv-card {
+
+    border:
+        2px solid #d90429;
+}
+
+
+.delete-all-btn {
+
+    background: #555;
+}
+
+
+.delete-all-btn:hover {
+
+    background: #222;
+}
+
+
+/* BLOOD GRID */
+
+.blood-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.blood-card {
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    background: #fff0f2;
+
+    border:
+        1px solid #ffd0d6;
+
+    text-align: center;
+
+    transition: 0.2s;
+}
+
+
+.blood-card:hover {
+
+    transform: scale(1.04);
+
+    background: #ffe5e8;
+}
+
+
+.blood-card strong {
+
+    display: block;
+
+    font-size: 25px;
+
+    color: #d90429;
+}
+
+
+.blood-card span {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #555;
+}
+
+
+/* EMERGENCY */
+
+.emergency {
+
+    border:
+        2px solid #d90429;
+
+    background: #fff5f6;
+}
+
+
+.emergency p {
+
+    margin-bottom: 10px;
+
+    color: #555;
+}
+
+
+/* SECTION TITLE */
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.small-btn {
+
+    width: auto;
+
+    padding:
+        9px 18px;
+
+    margin: 0;
+}
+
+
+/* NO RESULT */
+
+.no-result {
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #777;
+
+    padding: 20px;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    background: #222;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 30px;
+}
+
+
+footer p {
+
+    margin: 5px;
+}
+
+
+/* DARK MODE */
+
+body.dark {
+
+    background: #181818;
+
+    color: #eee;
+}
+
+
+body.dark .card,
+body.dark .stat-card {
+
+    background: #252525;
+
+    color: #eee;
+}
+
+
+body.dark input,
+body.dark select {
+
+    background: #333;
+
+    color: white;
+
+    border-color: #555;
+}
+
+
+body.dark .donor {
+
+    background: #303030;
+}
+
+
+body.dark .blood-card {
+
+    background: #3a2024;
+
+    border-color: #63333a;
+}
+
+
+body.dark .blood-card span {
+
+    color: #ddd;
+}
+
+
+body.dark .emergency {
+
+    background: #321d20;
+}
+
+
+body.dark .emergency p {
+
+    color: #ddd;
+}
+
+
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .blood-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .donor-actions {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    header h1 {
+
+        font-size: 24px;
+    }
+
+
+    .header-content {
+
+        width: 100%;
+    }
+
+
+    .dashboard {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .blood-grid {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .button-row {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .donor-actions {
+
+        grid-template-columns:
+            1fr;
+    }
+
+}
+```
